@@ -18,21 +18,21 @@ var rollbar = new Rollbar({
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
 
-let students = []
+// let students = []
 
-app.post('/api/student', (req, res)=>{
-    let {name} = req.body
-    name = name.trim()
+// app.post('/api/student', (req, res)=>{
+//     let {name} = req.body
+//     name = name.trim()
 
-    students.push(name)
+//     students.push(name)
 
-    rollbar.log('Student added successfully', {author: 'John', type: 'manual entry'})
+//     rollbar.log('Student added successfully', {author: 'John', type: 'manual entry'})
 
-    res.status(200.send(students))
-})
+//     res.status(200.send(students))
+// })
 
 const port = process.env.PORT || 4545
 
-app.use(rollbar.errorHandler())
+// app.use(rollbar.errorHandler())
 
 app.listen(port, ()=>console.log(`Server is running on port: ${port}`))
